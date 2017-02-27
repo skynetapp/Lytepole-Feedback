@@ -68,7 +68,7 @@ In **FeedbackData.php** we will set the session of user id in function   **creat
 - Next, function **createFeedbackListDataObjectArr** will be called from controller to action and from action, function **createFeedbackListDataObject** will be called in FeedbackData.php where we can set the fields which are needed to display for a feedback.
 - After the fields list array is called, it will be passed to function **showFeedbackList** in controller to action, and from action to FeedbackView.php, function **showFeedbackListView** will be called callsthe tpl page **FeedbackViewForm.tpl** to display all feedbacks.
 
-#### Step 9:
+#### Step 10:
 
 For creating a feedback , call the action as **CreateForm** from index.php -> **showFeedbackCreateForm** called in controller.
 - Next from controller, the action function will be called **showFeedbackCreateForm** and from action, function **showFeedbackCreateView** will be called in **FeedbackView.php** which is included in action.
@@ -80,8 +80,17 @@ For creating a feedback , call the action as **CreateForm** from index.php -> **
 - Here we will get the ws client connection and function **createNewFeedback** will be called action to FeedbackWS.php.
 - In  FeedbackWS.php, we will call the ws **set_entry** and a record will be inserted in sugar under module -> Bugs.
 - Next it sets the relationship with ws call **set_relationship** between Accounts and Bugs.
+- If the login session is set, it will redirect to Feedback list page or else displays the message as **session not set**.
 
-#### Step 10:
+#### Step 11:
+
+To show the detail feedback, action **FeedbackDetailView** will be called in index.php and function **controlFeedbackDetailViewFlow** will be called from index.php -> controller.
+- Function **createFeedbackListInputVO** will execute to create value object with listing parameters.
+- Function **getFeedbackList** will get the array in ws call.
+- Function **createFeedbackListDataObjectArr** will create the dataobject of meeting list data.
+- Function **showFeedbackDetailView** will be called from controller -> action and then from action -> FeedbackView which calls the tpl page to display **FeedbackDetailView.tpl** in views folder.
+
+
 
 
 
