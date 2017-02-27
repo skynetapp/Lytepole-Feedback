@@ -52,9 +52,21 @@ In **FeedbackData.php** we will set the session of user id in function   **creat
 - If query date is empty, latest date will be entered or else the query date will be entered to function **setQueryDate**.
 - Based on the search, the query will be executed which matches the result entered in textbox by calling function **setQuery**.
 - If the action is **FeedbackDetailView**, based on the record id output will be displayed.
-- setting the Maximum results by calling **setMaxResults**.
+- setting the Maximum results by calling **setMaxResults**. These functions are called from **FeedbackListVo.php** which is included in the main calling function i.e **createFeedbackListInputVO**.
 
 #### Step 8:
+
+For creating a feedback , call the action as **CreateForm** from index.php -> **showFeedbackCreateForm** called in controller.
+- Next from controller, the action function will be called **showFeedbackCreateForm** and from action, function **showFeedbackCreateView** will be called in **FeedbackView.php** which is included in action.
+- In view function **showFeedbackCreateForm** , we will display the tpl page as **FeedbackCreateForm.tpl**.
+- When feedback is entered in the form, the form action calls **CreateFeedback** and function **controlFeedbackCreateFlow** will be called in controller.
+- In controller, first it gets the user id and if session of user id is not null function **createAddFeedbackInputVO** will be called in action.
+- In action, function **createAddFeedbackInputVO** will be called in **FeedbackData.php** which sets the session and creates a value object with parameters to add a new feedback.
+- Those parameters will be passed to function **createFeedback** in controller and called in action.
+- Here we will get the ws client connection and function **createNewFeedback** will be called action to FeedbackWS.php.
+- In  FeedbackWS.php, we will call the ws **set_entry** and a record will be inserted in sugar as well as DB under module -> Bugs.
+
+
 
 
 
