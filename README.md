@@ -14,7 +14,9 @@ Views | FeedbackCreateForm, FeedbackDetailView, FeedbackViewForm
 
 Main code flow:
 
-- index.php -> FeedbackController -> FeedbackAction -> FeedbackWS .
+- For WS Call: index.php -> FeedbackController -> FeedbackAction -> FeedbackWS .
+- For View: index.php -> controller -> action -> FeedbackView ->tpl page (Views folder)
+- To set Data: index.php -> controller -> action -> FeedbackData  
 
 #### Step 1: Login to lytepole with your phone number. 
 
