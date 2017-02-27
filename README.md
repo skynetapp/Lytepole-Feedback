@@ -12,6 +12,10 @@ Lib | Smarty,nusoap
 Modules | Feedback
 Views | FeedbackCreateForm, FeedbackDetailView, FeedbackViewForm
 
+Main code flow:
+
+- index.php -> FeedbackController -> FeedbackAction -> FeedbackWS .
+
 #### Step 1: Login to lytepole with your phone number. 
 
 #### Step 2: Go to left menu -> Feedback and the code flows as follows.
@@ -56,6 +60,16 @@ In **FeedbackData.php** we will set the session of user id in function   **creat
 
 #### Step 8:
 
+- After creating value object with listing parameters, it will be passed to function **getFeedbackList** which is called in action.
+- From action lytepole ws connection will be set by function **setWSDLHandle** in FeedbackWS.php and function **getListArray** is used to get the list by ws call **get_entry_list**. 
+
+#### Step 9:
+
+- Next, function **createFeedbackListDataObjectArr** will be called from controller to action and from action, function **createFeedbackListDataObject** will be called in FeedbackData.php where we can set the fields which are needed to display for a feedback.
+- After the fields list array is called, it will be passed to function **showFeedbackList** in controller to action, and from action to FeedbackView.php, function **showFeedbackListView** will be called callsthe tpl page **FeedbackViewForm.tpl** to display all feedbacks.
+
+#### Step 9:
+
 For creating a feedback , call the action as **CreateForm** from index.php -> **showFeedbackCreateForm** called in controller.
 - Next from controller, the action function will be called **showFeedbackCreateForm** and from action, function **showFeedbackCreateView** will be called in **FeedbackView.php** which is included in action.
 - In view function **showFeedbackCreateForm** , we will display the tpl page as **FeedbackCreateForm.tpl**.
@@ -64,7 +78,13 @@ For creating a feedback , call the action as **CreateForm** from index.php -> **
 - In action, function **createAddFeedbackInputVO** will be called in **FeedbackData.php** which sets the session and creates a value object with parameters to add a new feedback.
 - Those parameters will be passed to function **createFeedback** in controller and called in action.
 - Here we will get the ws client connection and function **createNewFeedback** will be called action to FeedbackWS.php.
-- In  FeedbackWS.php, we will call the ws **set_entry** and a record will be inserted in sugar as well as DB under module -> Bugs.
+- In  FeedbackWS.php, we will call the ws **set_entry** and a record will be inserted in sugar under module -> Bugs.
+- Next it sets the relationship with ws call **set_relationship** between Accounts and Bugs.
+
+#### Step 10:
+
+
+
 
 
 
