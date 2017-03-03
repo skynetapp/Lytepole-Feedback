@@ -1,6 +1,6 @@
 #### Date: 27/02/2017
 
-#### Description: This document explains the code flow of Feedback Module.
+#### Description: This document explains the code flow of Feedback from user.
 
 #### The Folder Structure is as follows:
 
@@ -73,6 +73,7 @@ In **FeedbackData.php** we will set the session of user id in function   **creat
 #### Step 10:
 
 For creating a feedback , call the action as **CreateForm** from index.php -> **showFeedbackCreateForm** called in controller.
+
 - Next from controller, the action function will be called **showFeedbackCreateForm** and from action, function **showFeedbackCreateView** will be called in **FeedbackView.php** which is included in action.
 - In view function **showFeedbackCreateForm** , we will display the tpl page as **FeedbackCreateForm.tpl**.
 - When feedback is entered in the form, the form action calls **CreateFeedback** and function **controlFeedbackCreateFlow** will be called in controller.
