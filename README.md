@@ -32,7 +32,7 @@ From index.php, Function **controlFeedbackListFlow()** will be called in the con
 In the controller, in function **controlFeedbackListFlow()** one of the function will be called **createFeedbackListInputVO** to action as **FeedbackAction.php** which is included in contoller.
 
 #### Step 6:
-In Function **createFeedbackListInputVO** , we will pass the user id by calling the function **getUserID()**. The input data will be next passed to Function **createFeedbackListInputVO** in **FeedbackData.php** which will be included in the action.
+In Function **createFeedbackListInputVO** , we will call the user id by calling the function **getUserID()** and append to input array. The input array will be next passed to Function **createFeedbackListInputVO** in **FeedbackData.php** which will be included in the action.
 
 **_Code:_**
 
@@ -53,7 +53,7 @@ function createFeedbackListInputVO($input_arr){
  
 #### Step 7:
 
-In **FeedbackData.php** we will set the session of user id in function   **createFeedbackListInputVO** and couple of statements will be executed here.
+**FeedbackData.php** will set the data for passing to wsdl calls. Function **createFeedbackListInputVO** gets the values from input array and sets the values for list value object to pass for WSDL calls. Couple of statements will be executed here.
 
 - If query date is empty, latest date will be entered or else the query date will be entered to function **setQueryDate**.
 - Based on the search, the query will be executed which matches the result entered in textbox by calling function **setQuery**.
