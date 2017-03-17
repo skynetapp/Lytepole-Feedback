@@ -1,3 +1,7 @@
+#### Date: 27/02/2017
+
+#### Description: This document explains the code flow of Feedback list.
+
 #### Step 1:
 
 From index.php, Function **controlFeedbackListFlow()** will be called in the controller page which takes the inputs from the user. when user clicks on feedback in side bar it will call this function. From this function we call the wsdl to get the feedback list and displays.
