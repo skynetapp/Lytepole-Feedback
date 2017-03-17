@@ -3,7 +3,9 @@
 From index.php, Function **controlFeedbackListFlow()** will be called in the controller page which takes the inputs from the user. when user clicks on feedback in side bar it will call this function. From this function we call the wsdl to get the feedback list and displays.
 
 - In the controller, in function **controlFeedbackListFlow()** one of the function will be called **createFeedbackListInputVO** to action as **FeedbackAction.php** which is included in contoller.
-- In Function **createFeedbackListInputVO** , we will call the user id by calling the function **getUserID()** and append to input array. - The input array will be next passed to Function **createFeedbackListInputVO** in **FeedbackData.php** which gets the values from input array and sets the values for list value object to pass for WSDL call. It prepare the query and required input for get_entry_list function to get the feedback list.
+- In Function **createFeedbackListInputVO** takes the inputs array and send to data file and prepares the list object to get the feed back list. Its pepare the input to feed back wsdl.
+- we will call the user id by calling the function **getUserID()** and append to input array. 
+- The input array will be next passed to Function **createFeedbackListInputVO** in **FeedbackData.php** which gets the values from input array and sets the values for list value object to pass for WSDL call. It prepare the query and required input for get_entry_list function to get the feedback list.
 
 
 #### Step 2:
