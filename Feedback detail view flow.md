@@ -1,3 +1,7 @@
+#### Date: 27/02/2017
+
+#### Description: This document explains the code flow of Feedback detail view.
+
 #### Step 1:
 
 Function **controlFeedbackDetailViewFlow** takes the inputs from the user, when user clicks on feedback arrow button in feedback list it shows the detail view of the select feed back based on the record id.
