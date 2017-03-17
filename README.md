@@ -33,23 +33,6 @@ In the controller, in function **controlFeedbackListFlow()** one of the function
 
 #### Step 6:
 In Function **createFeedbackListInputVO** , we will call the user id by calling the function **getUserID()** and append to input array. The input array will be next passed to Function **createFeedbackListInputVO** in **FeedbackData.php** which will be included in the action.
-
-**_Code:_**
-
-```
-function createFeedbackListInputVO($input_arr){
-        
-		$user_id = $this->getUserID();	
-		$input_arr['user_id'] = $user_id;
-		//print_r($user_id);exit;
-        require_once 'FeedbackData.php';
-        $contacts_data = new FeedbackData();
-        $contacts_list_vo = $contacts_data->createFeedbackListInputVO($input_arr);
-		//print_r($meeting_list_vo);		
-        return $contacts_list_vo;      
-        
-    }
- ```
  
 #### Step 7:
 
