@@ -6,7 +6,7 @@
 
 Function **controlFeedbackDetailViewFlow** takes the inputs from the user, when user clicks on feedback arrow button in feedback list it shows the detail view of the select feed back based on the record id.
 
-- In the controller page, function **createFeedbackListInputVO** will be redirected to action page as **FeedbackAction.php** which is included in contoller.
+- In the controller page, function **createFeedbackListInputVO** will be redirected to action page -> **FeedbackAction.php** which is included in contoller.
 - Function **createFeedbackListInputVO** takes the inputs array and send to data file and prepares the list object to get the feed back list. Its pepare the input to feed back wsdl.
 - Input parameters are Module Name = Feedback and Action Name = FeedbackList.
 - we will call the user id by calling the function **getUserID()** and append to input array. 
