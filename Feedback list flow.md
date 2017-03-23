@@ -12,8 +12,9 @@
 #### Step 1.1
 
 - Function **createFeedbackListInputVO** redirects to action page which takes the inputs array and send to data file and prepares the list object to get the feed back list.
+- Input Parameters will be  Module Name = Feedback and Action Name = FeedbackList
 - In action page, we will get the user id by function **getUserID()** and append to input array. 
-- Using above parameters it sets the values for list value object to pass for WSDL call. It prepare the query to get the feedback list.
+- Using above input (parameters) it sets the values for list value object to pass for WSDL call. It prepare the query to get the feedback list.
 
 #### Step 1.2
 
@@ -38,7 +39,7 @@
 #### Step 3.1
 
 - Function **createFeedbackListDataObjectArr** will be redirected to action page which creates a list object array for the data get from wsdl and passes to view page.
-- Input parameters will be the list array.
+- Input parameters will be session id, module name, query, max results etc.
 
 #### Step 3.2
 
